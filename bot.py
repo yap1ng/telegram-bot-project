@@ -3,11 +3,11 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.client.session.aiohttp import AiohttpSession
-from key import token
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
+import os
 
-BOT_TOKEN = token
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 dp = Dispatcher()
 
