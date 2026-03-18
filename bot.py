@@ -2,11 +2,10 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
+from aiogram.client.session.aiohttp import AiohttpSession
 from key import token
-from aiogram.client.session.aiohttp import AiohttpSession 
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
-
 
 BOT_TOKEN = token
 
@@ -103,8 +102,8 @@ async def stats(message: Message):
 
 
 async def main():
-    session = AiohttpSession(proxy="http://oNKKt5:H0ET6w@161.115.231.116:9019")
-    bot = Bot(token=BOT_TOKEN,session=session)
+    #session = AiohttpSession(proxy="http://ОНККТ5:HOET6W@161.115.231.116:9019")
+    bot = Bot(token=BOT_TOKEN) #,session=session
     print("Бот запущен")
     await dp.start_polling(bot)
 
